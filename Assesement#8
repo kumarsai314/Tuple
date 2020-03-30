@@ -1,0 +1,75 @@
+#1. Tuple is like list, except that it is immutable.
+Question:
+[MCQ] Which of the following declarations is a tuple with 1 element? 
+a) t = (1,) (True)
+b) t = (1)
+c) t = [1]
+d) t = ((1))
+e) None of the above
+
+#2. Tuple is like list, except that it is immutable. However, the elements in a tuple can be mutable.
+Question:
+[MCQ] Which of the following operation on a tuple 't' is valid?
+       t=((1,2), [3,4]) 
+a) t2 = (1,2)
+       t.extend(t2) 
+b) t.remove([3,4])
+c) t+=([5,6],) (True)
+d) t[0][1]=3
+e) None of the above
+
+#3.The determinant of a 2x2 matrix is the product of the elements on the main diagonal minus the product of the elements off the main diagonal.
+
+#4.Write a function hasSameContent(t1, t2) that takes in two tuples as arguments and return True if both tuples contain the same items.
+# Answer:
+def hasSameContent(t1, t2):
+    if(len(t1) != len(t2)):
+        return False
+    return sorted(t1)==sorted(t2) 
+    
+#5.In python, it is possible to pass in variable-length argument to a function by using the following notation: *args. The argument is passed in as a tuple.
+
+    def funA(*args):
+        print type(args)
+        print args
+        
+    >>> funA(1, 3, 5)
+    <type 'tuple'>
+    (1, 3, 5)
+    
+    >>> funA('a', 'b', 'c', 'd')
+    <type 'tuple'>
+    ('a', 'b', 'c', 'd')
+Write a function sumNumbers(*args) that takes in a variable-length argument list of numbers and returns the sum of the numbers.
+
+#Answer:
+
+def sumNumbers(*args):
+   
+    return sum(args)
+    
+#6. Write a function commonElements(t1, t2) that takes in 2 tuples as arguments and returns a sorted tuple containing elements that are found in both tuples.
+
+#Answer: 
+
+def commonElements(t1,t2):
+    return tuple((sorted(set(t1) & set(t2))))
+    
+    
+ #7.Write a function removeCommonElements(t1, t2) that takes in 2 tuples as arguments and returns a sorted tuple containing elements that are not found in both tuples.
+ 
+ #Answer:
+ def removeCommonElements(t1,t2):
+    return tuple((sorted(set(t1) ^ set(t2))))
+    
+ #8. Write a function shiftByTwo(*args) that takes in variable-length argument and returns a tuple with its elements shifted to the right by two indices. See samples given below.
+
+#Answer:
+
+def shiftByTwo(*args):
+    return args[len(args)-2:len(args)] + args[0:len(args)-2]
+    
+#9.Write a function sortByIndex(aList) that takes in a list of tuple in the following format: (index, value) and returns a new tuple with its elements sorted based on the index.
+
+
+#10. Write a function sortByLength(t, order) that takes in a tuple of string and returns a new tuple with its elements sorted by the length of the string. The order of sorting is based on the value of the second argument: 'asc' or 'des'.
